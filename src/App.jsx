@@ -1,19 +1,61 @@
 import "./styles.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Task from "./Task";
 import { Text } from "./Text";
+import axios from "axios";
+
 export default function App() {
-  const [showText, setShowText] = useState(false);
-
-  return (
-    <div className="App">
-      <button onClick={() => setShowText(!showText)}>Show Text</button>
-
-      {showText && <Text />}
-    </div>
-  );
-
+  //Predicated Age Lecture
+  // const [Name, setName] = useState("");
+  // const [Age, setAge] = useState(null);
+  // const fetchData = () => {
+  //   axios.get(`https://api.agify.io/?name= ${Name}`).then((res) => {
+  //     setAge(res.data);
+  //   });
+  // };
+  // return (
+  //   <div className="App">
+  //     <input
+  //       placeholder="Ex...Nilam"
+  //       onChange={(event) => {
+  //         setName(event.target.value);
+  //       }}
+  //     ></input>
+  //     <button onClick={fetchData}>Predict Age</button>
+  //     <h1>Name: {Age?.name} </h1>
+  //     <h1>Predicted Age: {Age?.age} </h1>
+  //     <h1>Count: {Age?.count} </h1>
+  //   </div>
+  // );
+  //CatFact API using axios
+  // fetch("https://catfact.ninja/fact")
+  //   .then((res) => res.json())
+  //   .then((data) => {
+  //     console.log(data);
+  //   });
+  // const fetchCatFact = () => {
+  //   axios.get("https://catfact.ninja/fact").then((res) => {
+  //     //console.log(res.data);
+  //     setcatFact(res.data.fact);
+  //   });
+  // };
+  // const [catFact, setcatFact] = useState("");
+  // useEffect(() => {}, []);
+  // return (
+  //   <div className="App">
+  //     <button onClick={fetchCatFact}>Generate Cat Fact</button>
+  //     <p>{catFact}</p>
+  //   </div>
+  // );
+  //useEffect Lecture
+  // const [showText, setShowText] = useState(false);
+  // return (
+  //   <div className="App">
+  //     <button onClick={() => setShowText(!showText)}>Show Text</button>
+  //     {showText && <Text />}
+  //   </div>
+  // );
   //to-di list-2
   // const [toDoList, setToDoList] = useState([]);
   // const [newTask, setNewTask] = useState("");

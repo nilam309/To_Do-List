@@ -4,8 +4,30 @@ import "./App.css";
 import Task from "./Task";
 import { Text } from "./Text";
 import axios from "axios";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Home } from "./Pages/Home";
+import { Menu } from "./Pages/Menu";
+import { Contact } from "./Pages/Contact";
 
 export default function App() {
+  return (
+    <div className="App">
+      <Router>
+        <div>
+          <Link to="/">Home</Link>
+          <Link to="/Menu">Menu</Link>
+          <Link to="/Contact">Contact</Link>
+        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Menu" element={<Menu />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="*" element={<h1>Page Not Found</h1>}></Route>
+        </Routes>
+      </Router>
+    </div>
+  );
+
   //Predicated Age Lecture
   // const [Name, setName] = useState("");
   // const [Age, setAge] = useState(null);
